@@ -8,10 +8,11 @@ export function Loading() {
         <View style={{
             flex: 1,
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            backgroundColor: '#a00000',
         }}>
             <ActivityIndicator
-                color={theme.colors.primary}
+                color={theme.colors.secondary}
                 size="large"
             />
         </View>

@@ -1,16 +1,28 @@
-import React from 'react';
-import { Container, Title, Ellipse1, OscarImg } from './styles';
+import React, { useEffect } from 'react';
+import { Title, Ellipse1, StyledLinearGradient } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
-// Importe as imagens aqui
-const splashBackground = require('./splash-background.jpg');
 const splashLogo = require('./splash-logo.png');
 
 export function Splash() {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.navigate('Home');
+    }, 3000); // Navega para a tela Inicio após 3 segundos
+
+    return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
+  }, []);
+  
   return (
-    <Container>
-      <OscarImg source={splashBackground} />
+    <StyledLinearGradient
+      colors={['#000000', '#a00000', '#ff0000']}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 0, y: 1 }}
+    >
       <Ellipse1 source={splashLogo} />
       <Title>QUIZ</Title>
-    </Container>
+    </StyledLinearGradient>
   );
 }

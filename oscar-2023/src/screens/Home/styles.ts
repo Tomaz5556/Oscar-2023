@@ -17,16 +17,22 @@ export const StyledLinearGradient = styled(LinearGradient)`
 
 export const Title = styled.Text`
   margin: 0;
-  top: 450px;
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 48px;
+  font-size: 36px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
+  top: 15px;
+  padding: 20px;
 `;
 
-export const Ellipse1 = styled.Image`
+export const Ellipse2 = styled.Image.attrs({
+  resizeMode: 'contain',
+})`
   position: absolute;
-  top: 170px;
+  top: 200px;
   justify-content: center;
+  width: 32%;
+  height: 32%;
+  align-self: center;
 `;

@@ -3,7 +3,9 @@ export default {
         primary: '#A02E2E',
         secondary: '#E0B210',
         tertiary: 'black',
-        quaternary: '#C83000'
+        background: 'black',
+        background_gradient_normal: '#a00000',
+        background_gradient_light: '#FF0000',
     },
     fonts: {
         regular: 'Outfit_400Regular',
