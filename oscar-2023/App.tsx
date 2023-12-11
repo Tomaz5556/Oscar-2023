@@ -15,6 +15,7 @@ import {
 import { Loading } from './src/components/Loading';
 import { Splash } from './src/screens/Splash';
 import { Home } from './src/screens/Home';
+import { Idade } from './src/screens/Idade';
 import React from 'react';
 import theme from './src/global/styles/theme';
 
