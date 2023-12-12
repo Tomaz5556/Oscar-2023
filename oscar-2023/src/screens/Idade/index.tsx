@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 
 export function Idade() {
+  const navigation = useNavigation();
+  
   return (
     <StyledLinearGradient
       colors={['#000000', '#a00000', '#ff0000']}
@@ -11,12 +14,12 @@ export function Idade() {
       style={{ flex: 1, justifyContent: 'space-evenly', alignItems: 'center' }}
     >
       <Title>Qual é a sua idade?</Title>
-      <Button title="De 0 a 11 anos" onPress={() => {}} />
-      <Button title="De 12 a 20 anos" onPress={() => {}} />
-      <Button title="De 21 a 30 anos" onPress={() => {}} />
-      <Button title="De 31 a 50 anos" onPress={() => {}} />
-      <Button title="De 50 a 65 anos" onPress={() => {}} />
-      <Button title="Acima de 66 anos" onPress={() => {}} />
+      <Button title="De 0 a 11 anos" onPress={() => navigation.navigate('Pessoa')} />
+      <Button title="De 12 a 20 anos" onPress={() => navigation.navigate('Pessoa')} />
+      <Button title="De 21 a 30 anos" onPress={() => navigation.navigate('Pessoa')} />
+      <Button title="De 31 a 50 anos" onPress={() => navigation.navigate('Pessoa')} />
+      <Button title="De 50 a 65 anos" onPress={() => navigation.navigate('Pessoa')} />
+      <Button title="Acima de 66 anos" onPress={() => navigation.navigate('Pessoa')} />
     </StyledLinearGradient>
   );
 }

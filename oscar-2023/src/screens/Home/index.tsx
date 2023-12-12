@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Title, Ellipse2, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 
 const estatueta = require('./estatueta-oscar.png');
 
 export function Home() {
+  const navigation = useNavigation();
+  
   return (
     <StyledLinearGradient
       colors={['#000000', '#a00000', '#ff0000']}
@@ -14,7 +17,7 @@ export function Home() {
     >
       <Title>Qual filme indicado ao Oscar 2023 você deve assistir?</Title>
       <Ellipse2 source={estatueta} />
-      <Button title="Iniciar" onPress={() => {}} />
+      <Button title="Iniciar" onPress={() => navigation.navigate('Idade')} />
     </StyledLinearGradient>
   );
 }

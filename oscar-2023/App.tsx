@@ -16,6 +16,8 @@ import { Loading } from './src/components/Loading';
 import { Splash } from './src/screens/Splash';
 import { Home } from './src/screens/Home';
 import { Idade } from './src/screens/Idade';
+import { Pessoa } from './src/screens/Pessoa';
+import { Curso } from './src/screens/Curso';
 import React from 'react';
 import theme from './src/global/styles/theme';
 
@@ -38,6 +40,9 @@ export default function App() {
         <Stack.Navigator initialRouteName="Splash">
           <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen name="Idade" component={Idade} options={{ headerShown: false }} />
+          <Stack.Screen name="Pessoa" component={Pessoa} options={{ headerShown: false }} />
+          <Stack.Screen name="Curso" component={Curso} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>
