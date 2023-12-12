@@ -24,16 +24,5 @@ export const Title = styled.Text`
   justify-content: center;
   top: 15px;
   padding: 20px;
-  margin-bottom: 40px;
-`;
-
-export const StyledTextInput = styled.TextInput`
-  background-color: white;
-  border: 1px solid black;
-  color: ${({ theme }) => theme.colors.tertiary};
-  font-size: 15px;
-  padding: 10px;
-  font-family: ${({ theme }) => theme.fonts.regular};
-  align-items: center;
-  margin: 10px;
+  margin-bottom: 100px;
 `;

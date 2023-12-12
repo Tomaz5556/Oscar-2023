@@ -9,7 +9,7 @@ export function Splash() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.navigate('Curso');
+      navigation.navigate('Home');
     }, 3000); // Navega para a tela Inicio após 3 segundos
 
     return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado

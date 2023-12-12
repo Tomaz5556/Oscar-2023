@@ -4,23 +4,29 @@ import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
 import { ItemList } from '../../components/ItemList';
 
-const cursos = [
-  'Licenciatura em Ciências Biológicas',
-  'Licenciatura em Matemática',
-  'Licenciatura em Química',
-  'Licenciatura em Física',
-  'Licenciatura em Pedagogia',
-  'Bacharelado em Medicina Veterinária',
-  'Bacharelado em Engenharia Florestal',
-  'Bacharelado em Engenharia de Alimentos',
-  'Bacharelado em Sistemas de Informação',
-  'Técnico em Informática',
-  'Técnico em Agropecuária',
-  'Técnico em Agroindústria',
+const setores = [
+  'Direção Geral',
+  'Coordenação de Gabinete',
+  'Coordenação de Gestão de Pessoas - CGP',
+  'Departamento Financeiro - Compras',
+  'Direção de Ensino',
+  'Diretoria de Pesquisa',
+  'Diretoria de Extensão',
+  'Docentes',
+  'Setor de Estágio',
+  'Núcleo Pedagógico',
+  'CGAE',
+  'Almoxarifado',
+  'Biblioteca',
+  'Secretaria',
+  'Gestão de Tecnologia da Informação - CGTI',
+  'Segurança - Vigilância',
+  'Lavanderia',
+  'Fadetec',
   'Outro'
 ];
 
-export function Curso() {
+export function Setor() {
   const navigation = useNavigation();
   
   const [selectedCourse, setSelectedCourse] = React.useState<string | null>(null);
@@ -38,7 +44,7 @@ export function Curso() {
 
   const handleConfirm = () => {
     if (selectedCourse === null || (selectedCourse === 'Outro' && otherCourse === '')) {
-      alert('Por favor, selecione ou digite um curso.');
+      alert('Por favor, selecione ou digite um setor.');
     } else {
       navigation.navigate('Quiz');
     }
@@ -51,11 +57,11 @@ export function Curso() {
       end={{ x: 0, y: 1 }}
       style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
     >
-      <Title>Qual é o seu curso?</Title>
-      <ItemList data={cursos} onPressItem={handlePressItem} />
+      <Title>Qual é o seu setor?</Title>
+      <ItemList data={setores} onPressItem={handlePressItem} />
       {showInput && 
         <StyledTextInput 
-          placeholder="Digite o curso" 
+          placeholder="Digite o setor" 
           value={otherCourse}
           onChangeText={setOtherCourse}
         />
