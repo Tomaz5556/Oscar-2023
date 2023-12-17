@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Title, Ellipse2, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 
-const estatueta = require('./estatueta-oscar.png');
+const estatueta = require('../../../assets/images/estatueta-oscar.png');
 
 export function Home() {
   const navigation = useNavigation();

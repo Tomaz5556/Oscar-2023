@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export const StyledLinearGradient = styled(LinearGradient)`
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   top: 0;
@@ -11,7 +11,6 @@ export const StyledLinearGradient = styled(LinearGradient)`
   display: block;
   width: 100%;
   height: 852px;
-  position: relative;
   overflow: hidden;
   padding: 15px;
 `;
@@ -28,19 +27,18 @@ export const Title = styled.Text`
 
 export const Movie = styled.Text`
   margin: 0;
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.bold};
   font-size: 36px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
-  font-weight: bold;
   padding-top: 20px;
 `;
 
 export const Description = styled.Text`
   margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
@@ -49,7 +47,7 @@ export const Description = styled.Text`
 export const Director = styled.Text`
   margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;

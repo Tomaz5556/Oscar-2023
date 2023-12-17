@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export const StyledLinearGradient = styled(LinearGradient)`
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   top: 0;
@@ -11,7 +11,6 @@ export const StyledLinearGradient = styled(LinearGradient)`
   display: block;
   width: 100%;
   height: 852px;
-  position: relative;
   overflow: hidden;
 `;
 

@@ -12,4 +12,6 @@ export const ButtonText = styled.Text`
   font-size: 30px;
   padding: 15px;
   font-family: ${({ theme }) => theme.fonts.regular};
+  text-align: center;
+  flex-wrap: wrap;
 `;
