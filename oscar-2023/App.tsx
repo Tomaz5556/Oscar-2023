@@ -20,6 +20,7 @@ import { Pessoa } from './src/screens/Pessoa';
 import { Curso } from './src/screens/Curso';
 import { Setor } from './src/screens/Setor';
 import { Quiz } from './src/screens/Quiz';
+import { Filme } from './src/screens/Filme';
 import React from 'react';
 import theme from './src/global/styles/theme';
 
@@ -47,6 +48,7 @@ export default function App() {
           <Stack.Screen name="Curso" component={Curso} options={{ headerShown: false }} />
           <Stack.Screen name="Setor" component={Setor} options={{ headerShown: false }} />
           <Stack.Screen name="Quiz" component={Quiz} options={{ headerShown: false }} />
+          <Stack.Screen name="Filme" component={Filme} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>
