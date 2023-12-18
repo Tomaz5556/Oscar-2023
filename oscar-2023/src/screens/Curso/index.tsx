@@ -25,6 +25,8 @@ const cursos = [
 export function Curso() {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Curso'>>();
   
+  const [showCourses, setShowCourses] = React.useState(false);
+  
   const [selectedCourse, setSelectedCourse] = React.useState<string | null>(null);
   const [otherCourse, setOtherCourse] = React.useState('');
   const [showInput, setShowInput] = React.useState(false);
@@ -46,6 +48,10 @@ export function Curso() {
     }
   };
 
+  const handleToggleCourses = () => {
+    setShowCourses(!showCourses);
+  };
+
   return (
     <StyledLinearGradient
       colors={['#000000', '#a00000', '#ff0000']}
@@ -54,7 +60,8 @@ export function Curso() {
       style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
     >
       <Title>Qual é o seu curso?</Title>
-      <ItemList data={cursos} onPressItem={handlePressItem} />
+      <Button title={showCourses ? "Selecione o Curso ⇧" : "Selecione o Curso ⇩"} onPress={handleToggleCourses} />
+      {showCourses && <ItemList data={cursos} onPressItem={handlePressItem} />}
       {showInput && 
         <StyledTextInput 
           placeholder="Digite o curso" 
