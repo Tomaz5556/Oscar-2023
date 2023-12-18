@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { Title, Ellipse1, StyledLinearGradient } from './styles';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../routes';
 
 const splashLogo = require('../../../assets/images/splash-logo.png');
 
 export function Splash() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Splash'>>();
 
   useEffect(() => {
     const timer = setTimeout(() => {

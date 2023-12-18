@@ -203,11 +203,12 @@ export function Quiz() {
     if (nextQuestionIndex !== null) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
-      // Use o índice da resposta para buscar o filme correspondente
       const movieIndex = currentQuestion.filme[answerIndex];
-      setSelectedMovie(FILMES[movieIndex]);
+      if (movieIndex !== null) {
+        setSelectedMovie(FILMES[movieIndex]);
+      }
     }
-  };  
+  };    
 
   return (
     <StyledLinearGradient

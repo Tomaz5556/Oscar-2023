@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../routes';
 import { Title, Ellipse2, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 
 const estatueta = require('../../../assets/images/estatueta-oscar.png');
 
 export function Home() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Home'>>();
   
   return (
     <StyledLinearGradient

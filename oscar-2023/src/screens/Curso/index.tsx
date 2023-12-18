@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
 import { ItemList } from '../../components/ItemList';
@@ -21,7 +23,7 @@ const cursos = [
 ];
 
 export function Curso() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Curso'>>();
   
   const [selectedCourse, setSelectedCourse] = React.useState<string | null>(null);
   const [otherCourse, setOtherCourse] = React.useState('');

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 
 export function Idade() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Idade'>>();
   
   return (
     <StyledLinearGradient

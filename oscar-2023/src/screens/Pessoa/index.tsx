@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 
 export function Pessoa() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Pessoa'>>();
   
   return (
     <StyledLinearGradient

@@ -1,11 +1,20 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../routes';
 import { Title, Movie, Description, Director, Image, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 
-export function Filme({ filme }) {
-  const navigation = useNavigation();
+interface Filme {
+  nome: string;
+  imagem: any;
+  descricao: string;
+  diretor: string;
+}
+
+export function Filme({ filme }: { filme: Filme }) {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Filme'>>();
 
   const handleConfirm = () => {
     navigation.navigate('Home');
