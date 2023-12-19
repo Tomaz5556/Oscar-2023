@@ -32,7 +32,6 @@ export function Routes() {
       <Stack.Screen name="Curso" component={Curso} options={{ headerShown: false }} />
       <Stack.Screen name="Setor" component={Setor} options={{ headerShown: false }} />
       <Stack.Screen name="Quiz" component={Quiz} options={{ headerShown: false }} />
-      <Stack.Screen name="Filme" component={Filme} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
