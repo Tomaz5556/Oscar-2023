@@ -26,13 +26,16 @@ export const Title = styled.Text`
   margin-bottom: 40px;
 `;
 
-export const StyledTextInput = styled.TextInput`
+export const StyledTextInput = styled.TextInput.attrs(props => ({
+  selectionColor: props.theme.colors.dark
+}))`
   background-color: ${({ theme }) => theme.colors.light};
-  border: 1px solid black;
+  border: 1px solid ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.dark};
   font-size: 15px;
   padding: 10px;
   font-family: ${({ theme }) => theme.fonts.regular};
   align-items: center;
   margin: 10px;
+  text-align: center;
 `;

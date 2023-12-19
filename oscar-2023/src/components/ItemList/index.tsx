@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
 import { StyledTouchableOpacity, StyledText } from './styles';
 
@@ -8,8 +8,15 @@ interface ItemListProps {
 }
 
 export function ItemList({ data, onPressItem }: ItemListProps) {
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const renderItem: ListRenderItem<string> = ({ item }) => (
-    <StyledTouchableOpacity onPress={() => onPressItem(item)}>
+    <StyledTouchableOpacity
+      onPress={() => {
+        onPressItem(item);
+        setSelectedItem(item);
+      }}
+      selected={item === selectedItem}
+    >
       <StyledText>{item}</StyledText>
     </StyledTouchableOpacity>
   );
