@@ -4,6 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
+import { ButtonItem } from '../../components/ButtonItem';
 import { ItemList } from '../../components/ItemList';
 
 const cursos = [
@@ -60,7 +61,7 @@ export function Curso() {
       style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
     >
       <Title>Qual é o seu curso?</Title>
-      <Button title={showCourses ? "Selecione o Curso ⇧" : "Selecione o Curso ⇩"} onPress={handleToggleCourses} />
+      <ButtonItem title={showCourses ? "Selecione o Curso  ▲" : "Selecione o Curso  ▼"} onPress={handleToggleCourses} />
       {showCourses && <ItemList data={cursos} onPressItem={handlePressItem} />}
       {showInput && 
         <StyledTextInput 

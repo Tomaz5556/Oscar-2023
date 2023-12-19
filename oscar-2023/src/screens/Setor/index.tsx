@@ -4,6 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
+import { ButtonItem } from '../../components/ButtonItem';
 import { ItemList } from '../../components/ItemList';
 
 const setores = [
@@ -66,7 +67,7 @@ export function Setor() {
       style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
     >
       <Title>Qual é o seu setor?</Title>
-      <Button title={showSectors ? "Selecione o Setor ⇧" : "Selecione o Setor ⇩"} onPress={handleToggleSectors} />
+      <ButtonItem title={showSectors ? "Selecione o Setor  ▲" : "Selecione o Setor  ▼"} onPress={handleToggleSectors} />
       {showSectors && <ItemList data={setores} onPressItem={handlePressItem} />}
       {showInput && 
         <StyledTextInput 

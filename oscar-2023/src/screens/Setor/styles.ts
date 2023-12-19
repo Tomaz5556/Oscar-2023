@@ -27,9 +27,9 @@ export const Title = styled.Text`
 `;
 
 export const StyledTextInput = styled.TextInput`
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.light};
   border: 1px solid black;
-  color: ${({ theme }) => theme.colors.tertiary};
+  color: ${({ theme }) => theme.colors.dark};
   font-size: 15px;
   padding: 10px;
   font-family: ${({ theme }) => theme.fonts.regular};

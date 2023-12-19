@@ -2,10 +2,8 @@ export default {
     colors: {
         primary: '#A02E2E',
         secondary: '#E0B210',
-        tertiary: 'black',
-        background: 'black',
-        background_gradient_normal: '#a00000',
-        background_gradient_light: '#FF0000',
+        light: 'white',
+        dark: 'black'
     },
     fonts: {
         regular: 'Outfit_400Regular',

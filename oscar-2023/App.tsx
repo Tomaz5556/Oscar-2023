@@ -1,5 +1,3 @@
-// App.tsx
-
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components';
 import { NavigationContainer } from '@react-navigation/native';
