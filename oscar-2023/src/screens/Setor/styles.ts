@@ -30,12 +30,13 @@ export const StyledTextInput = styled.TextInput.attrs(props => ({
   selectionColor: props.theme.colors.dark
 }))`
   background-color: ${({ theme }) => theme.colors.light};
-  border: 1px solid ${({ theme }) => theme.colors.dark};
+  border: 3px solid ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.dark};
-  font-size: 15px;
+  font-size: 24px;
   padding: 10px;
   font-family: ${({ theme }) => theme.fonts.regular};
   align-items: center;
   margin: 10px;
   text-align: center;
+  border-radius: 15px;
 `;

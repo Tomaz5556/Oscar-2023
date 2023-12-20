@@ -26,7 +26,7 @@ const setores = [
   'Segurança - Vigilância',
   'Lavanderia',
   'Fadetec',
-  'Outro'
+  'Outro: Qual?'
 ];
 
 export function Setor() {
@@ -40,7 +40,7 @@ export function Setor() {
 
   const handlePressItem = (item: string) => {
     setSelectedSector(item);
-    if (item === 'Outro') {
+    if (item === 'Outro: Qual?') {
       setShowInput(true);
     } else {
       setShowInput(false);
@@ -48,7 +48,7 @@ export function Setor() {
   };
 
   const handleConfirm = () => {
-    if (selectedSector === null || (selectedSector === 'Outro' && otherSector === '')) {
+    if (selectedSector === null || (selectedSector === 'Outro: Qual?' && otherSector === '')) {
       alert('Por favor, selecione ou digite um setor.');
     } else {
       navigation.navigate('Quiz');

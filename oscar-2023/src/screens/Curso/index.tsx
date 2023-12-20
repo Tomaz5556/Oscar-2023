@@ -20,7 +20,7 @@ const cursos = [
   'Técnico em Informática',
   'Técnico em Agropecuária',
   'Técnico em Agroindústria',
-  'Outro'
+  'Outro: Qual?'
 ];
 
 export function Curso() {
@@ -34,7 +34,7 @@ export function Curso() {
 
   const handlePressItem = (item: string) => {
     setSelectedCourse(item);
-    if (item === 'Outro') {
+    if (item === 'Outro: Qual?') {
       setShowInput(true);
     } else {
       setShowInput(false);
@@ -42,7 +42,7 @@ export function Curso() {
   };
 
   const handleConfirm = () => {
-    if (selectedCourse === null || (selectedCourse === 'Outro' && otherCourse === '')) {
+    if (selectedCourse === null || (selectedCourse === 'Outro: Qual?' && otherCourse === '')) {
       alert('Por favor, selecione ou digite um curso.');
     } else {
       navigation.navigate('Quiz');
