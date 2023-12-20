@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Title, Ellipse1, StyledLinearGradient } from './styles';
+import { Title, SplashImg, StyledLinearGradient } from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
@@ -23,7 +23,7 @@ export function Splash() {
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
     >
-      <Ellipse1 source={splashLogo} />
+      <SplashImg source={splashLogo} />
       <Title>QUIZ</Title>
     </StyledLinearGradient>
   );

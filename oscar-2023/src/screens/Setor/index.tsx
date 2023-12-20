@@ -57,6 +57,7 @@ export function Setor() {
 
   const handleToggleSectors = () => {
     setShowSectors(!showSectors);
+    setShowInput(false);
   };
 
   return (
@@ -67,9 +68,9 @@ export function Setor() {
       style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
     >
       <Title>Qual é o seu setor?</Title>
-      <ButtonItem title={showSectors ? "Selecione o Setor  ▲" : "Selecione o Setor  ▼"} onPress={handleToggleSectors} />
+      <ButtonItem title={showSectors ? "Selecione o Setor   ▲" : "Selecione o Setor   ▼"} onPress={handleToggleSectors} />
       {showSectors && <ItemList data={setores} onPressItem={handlePressItem} />}
-      {showInput && 
+      {showInput && showInput && selectedSector === 'Outro: Qual?' && 
         <StyledTextInput 
           placeholder="Digite o setor" 
           value={otherSector}

@@ -16,7 +16,7 @@ export const StyledLinearGradient = styled(LinearGradient)`
 
 export const Title = styled.Text`
   margin: 0;
-  top: 450px;
+  top: 400px;
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 48px;
   text-align: center;
@@ -24,8 +24,13 @@ export const Title = styled.Text`
   justify-content: center;
 `;
 
-export const Ellipse1 = styled.Image`
+export const SplashImg = styled.Image.attrs({
+  resizeMode: 'contain',
+})`
   position: absolute;
-  top: 170px;
+  bottom: 160px;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-self: center;
 `;
