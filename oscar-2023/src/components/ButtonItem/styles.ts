@@ -2,10 +2,10 @@ import styled from 'styled-components/native';
 
 export const StyledButton = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.light};
+  border: 2px solid ${({ theme }) => theme.colors.dark};
   align-items: center;
   border-radius: 15px;
-  margin: 18px;
-  border: 3px solid ${({ theme }) => theme.colors.dark};
+  margin: 10px;
 `;
 
 export const ButtonText = styled.Text`
