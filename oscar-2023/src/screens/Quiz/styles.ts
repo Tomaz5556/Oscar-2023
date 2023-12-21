@@ -17,11 +17,11 @@ export const StyledLinearGradient = styled(LinearGradient)`
 export const Title = styled.Text`
   margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 36px;
+  font-size: 40px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
   top: 15px;
   padding: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;

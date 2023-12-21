@@ -11,7 +11,7 @@ const QUESTIONS = [
     filme: [null, null]
   },
   {
-    question: 'Qual relacionamento mais é mais complicado para você?',
+    question: 'Qual relacionamento é mais complicado para você?',
     answers: ['Família', 'Amizade'],
     next: [3, 4],
     filme: [null, null]
