@@ -24,7 +24,7 @@ export const Title = styled.Text`
   padding: 20px;
 `;
 
-export const Ellipse2 = styled.Image.attrs({
+export const OscarImg = styled.Image.attrs({
   resizeMode: 'contain',
 })`
   position: absolute;

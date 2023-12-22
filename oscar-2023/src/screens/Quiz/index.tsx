@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BackHandler } from 'react-native';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 import { Filme } from '../Filme';
@@ -196,11 +197,13 @@ interface Filme {
 export function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedMovie, setSelectedMovie] = useState<Filme | null>(null);
+  const [history, setHistory] = useState<number[]>([]);
   const currentQuestion = QUESTIONS[currentQuestionIndex];
 
   const handleAnswer = (answerIndex: number) => {
     const nextQuestionIndex = currentQuestion.next[answerIndex];
     if (nextQuestionIndex !== null) {
+      setHistory([...history, currentQuestionIndex]);
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       const movieIndex = currentQuestion.filme[answerIndex];
@@ -208,7 +211,29 @@ export function Quiz() {
         setSelectedMovie(FILMES[movieIndex]);
       }
     }
-  };    
+  };
+  
+  const handleBack = () => {
+    if (history.length > 0) {
+      const lastQuestionIndex = history[history.length - 1];
+      setHistory(history.slice(0, -1));
+      setCurrentQuestionIndex(lastQuestionIndex);
+    }
+  };
+
+  useEffect(() => {
+    const backAction = () => {
+      handleBack();
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, [history]);
 
   return (
     <StyledLinearGradient

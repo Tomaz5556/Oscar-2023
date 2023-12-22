@@ -16,6 +16,7 @@ export type RootStackParamList = {
   Curso: undefined;
   Setor: undefined;
   Quiz: undefined;
+  Filme: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
