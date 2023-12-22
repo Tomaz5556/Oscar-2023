@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
@@ -43,7 +44,7 @@ export function Curso() {
 
   const handleConfirm = () => {
     if (selectedCourse === null || (selectedCourse === 'Outro: Qual?' && otherCourse === '')) {
-      alert('Por favor, selecione ou digite um curso.');
+      Alert.alert('Erro', 'Por favor, selecione ou digite um curso', [{ text: 'OK' }]);
     } else {
       navigation.navigate('Quiz');
     }

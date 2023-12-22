@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
@@ -49,7 +50,7 @@ export function Setor() {
 
   const handleConfirm = () => {
     if (selectedSector === null || (selectedSector === 'Outro: Qual?' && otherSector === '')) {
-      alert('Por favor, selecione ou digite um setor.');
+      Alert.alert('Erro', 'Por favor, selecione ou digite um setor.', [{ text: 'OK' }]);
     } else {
       navigation.navigate('Quiz');
     }
