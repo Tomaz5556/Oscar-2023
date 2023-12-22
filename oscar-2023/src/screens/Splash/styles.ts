@@ -6,11 +6,10 @@ export const StyledLinearGradient = styled(LinearGradient)`
   left: 0;
   right: 0;
   top: 0;
-  height: 100%;
   box-sizing: border-box;
   display: block;
   width: 100%;
-  height: 852px;
+  height: 100%;
   overflow: hidden;
 `;
 
@@ -28,7 +27,7 @@ export const SplashImg = styled.Image.attrs({
   resizeMode: 'contain',
 })`
   position: absolute;
-  bottom: 160px;
+  bottom: 50px;
   justify-content: center;
   width: 100%;
   height: 100%;

@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { ActivityIndicator } from 'react-native';
 
 export const StyledLinearGradient = styled(LinearGradient)`
   position: relative;
@@ -10,16 +11,11 @@ export const StyledLinearGradient = styled(LinearGradient)`
   display: block;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 `;
 
-export const Title = styled.Text`
-  margin: 0;
-  font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 36px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.secondary};
+export const StyledActivityIndicator = styled(ActivityIndicator)`
   justify-content: center;
-  top: 15px;
-  padding: 20px;
+  align-items: center;
+  display: flex;
+  flex: 1;
 `;

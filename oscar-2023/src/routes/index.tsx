@@ -7,7 +7,6 @@ import { Pessoa } from '../screens/Pessoa';
 import { Curso } from '../screens/Curso';
 import { Setor } from '../screens/Setor';
 import { Quiz } from '../screens/Quiz';
-import { Filme } from '../screens/Filme';
 
 export type RootStackParamList = {
   Splash: undefined;
@@ -17,7 +16,6 @@ export type RootStackParamList = {
   Curso: undefined;
   Setor: undefined;
   Quiz: undefined;
-  Filme: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
