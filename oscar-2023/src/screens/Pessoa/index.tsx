@@ -4,10 +4,11 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
+import { storeData } from '../../AsyncStorageOperations';
 
 export function Pessoa() {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Pessoa'>>();
-  
+
   return (
     <StyledLinearGradient
       colors={['#000000', '#a00000', '#ff0000']}
@@ -16,8 +17,8 @@ export function Pessoa() {
       style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
     >
       <Title>Quem você é?</Title>
-      <Button title="Aluno" onPress={() => navigation.navigate('Curso')} />
-      <Button title="Servidor" onPress={() => navigation.navigate('Setor')} />
+      <Button title="Aluno" onPress={() => { navigation.navigate('Curso'); storeData('pessoa', 'Aluno'); }} />
+      <Button title="Servidor" onPress={() => { navigation.navigate('Setor'); storeData('pessoa', 'Servidor'); }} />
     </StyledLinearGradient>
   );
 }

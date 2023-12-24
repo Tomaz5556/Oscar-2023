@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, Movie, Description, Director, Image, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
+import { storeData } from '../../AsyncStorageOperations';
 
 interface Filme {
   nome: string;
@@ -16,6 +17,10 @@ interface Filme {
 export function Filme({ filme }: { filme: Filme }) {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Filme'>>();
 
+  useEffect(() => {
+    storeData('filme', filme.nome);
+  }, []);
+  
   const handleConfirm = () => {
     navigation.navigate('Home');
   }

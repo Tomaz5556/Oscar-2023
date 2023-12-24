@@ -7,6 +7,7 @@ import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
 import { ButtonItem } from '../../components/ButtonItem';
 import { ItemList } from '../../components/ItemList';
+import { storeData } from '../../AsyncStorageOperations';
 
 const setores = [
   'Direção Geral',
@@ -48,13 +49,15 @@ export function Setor() {
     }
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (selectedSector === null || (selectedSector === 'Outro: Qual?' && otherSector === '')) {
       Alert.alert('Erro', 'Por favor, selecione ou digite um setor.', [{ text: 'OK' }]);
     } else {
+      const sectorToStore = selectedSector === 'Outro: Qual?' ? otherSector : selectedSector;
+      await storeData('setor', sectorToStore);
       navigation.navigate('Quiz');
     }
-  };
+  };  
 
   const handleToggleSectors = () => {
     setShowSectors(!showSectors);

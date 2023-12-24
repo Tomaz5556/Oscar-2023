@@ -7,6 +7,7 @@ import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
 import { ButtonItem } from '../../components/ButtonItem';
 import { ItemList } from '../../components/ItemList';
+import { storeData } from '../../AsyncStorageOperations';
 
 const cursos = [
   'Licenciatura em Ciências Biológicas',
@@ -42,13 +43,15 @@ export function Curso() {
     }
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (selectedCourse === null || (selectedCourse === 'Outro: Qual?' && otherCourse === '')) {
       Alert.alert('Erro', 'Por favor, selecione ou digite um curso', [{ text: 'OK' }]);
     } else {
+      const courseToStore = selectedCourse === 'Outro: Qual?' ? otherCourse : selectedCourse;
+      await storeData('curso', courseToStore);
       navigation.navigate('Quiz');
     }
-  };
+  };  
 
   const handleToggleCourses = () => {
     setShowCourses(!showCourses);
