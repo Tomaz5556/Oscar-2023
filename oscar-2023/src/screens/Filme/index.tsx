@@ -5,7 +5,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, Movie, Description, Director, Image, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
-import { storeData } from '../../AsyncStorageOperations';
+import { storeData } from '../../GuardarDados';
 import theme from '../../global/styles/theme';
 
 interface Filme {

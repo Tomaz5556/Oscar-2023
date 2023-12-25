@@ -7,7 +7,7 @@ import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
 import { ButtonItem } from '../../components/ButtonItem';
 import { ItemList } from '../../components/ItemList';
-import { storeData } from '../../AsyncStorageOperations';
+import { storeData } from '../../GuardarDados';
 import theme from '../../global/styles/theme';
 
 const setores = [

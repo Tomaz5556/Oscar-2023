@@ -2,7 +2,7 @@ import React from 'react';
 import { StyledButton, ButtonText } from './styles';
 
 interface ButtonProps {
-  onPress: () => void; // Adicione esta linha
+  onPress: () => void;
   title: string;
 }
 
