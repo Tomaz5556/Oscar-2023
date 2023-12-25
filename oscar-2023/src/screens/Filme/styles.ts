@@ -12,6 +12,9 @@ export const StyledLinearGradient = styled(LinearGradient)`
   height: 852px;
   overflow: hidden;
   padding: 15px;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 export const Title = styled.Text`

@@ -4,6 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, OscarImg, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
+import theme from '../../global/styles/theme';
 
 const estatueta = require('../../../assets/images/estatueta-oscar.png');
 
@@ -12,10 +13,9 @@ export function Home() {
   
   return (
     <StyledLinearGradient
-      colors={['#000000', '#a00000', '#ff0000']}
+      colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
-      style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}
     >
       <Title>Qual filme indicado ao Oscar 2023 você deve assistir?</Title>
       <OscarImg source={estatueta} />

@@ -6,6 +6,7 @@ import { RootStackParamList } from '../../routes';
 import { Title, Movie, Description, Director, Image, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 import { storeData } from '../../AsyncStorageOperations';
+import theme from '../../global/styles/theme';
 
 interface Filme {
   nome: string;
@@ -28,10 +29,9 @@ export function Filme({ filme }: { filme: Filme }) {
   return (
     <ScrollView>
       <StyledLinearGradient
-        colors={['#000000', '#a00000', '#ff0000']}
+        colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
-        style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
       >
         <Title>O filme que você deve assistir é</Title>
         <Movie>{filme.nome}</Movie>

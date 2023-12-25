@@ -5,16 +5,16 @@ import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 import { storeData } from '../../AsyncStorageOperations';
+import theme from '../../global/styles/theme';
 
 export function Idade() {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Idade'>>();
   
   return (
     <StyledLinearGradient
-      colors={['#000000', '#a00000', '#ff0000']}
+      colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
-      style={{ flex: 1, justifyContent: 'space-evenly', alignItems: 'center' }}
     >
       <Title>Qual é a sua idade?</Title>
       <Button title="De 0 a 11 anos" onPress={() => {navigation.navigate('Pessoa'); storeData('idade', 'De 0 a 11 anos');}} />

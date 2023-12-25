@@ -8,6 +8,7 @@ import { Button } from '../../components/Button';
 import { ButtonItem } from '../../components/ButtonItem';
 import { ItemList } from '../../components/ItemList';
 import { storeData } from '../../AsyncStorageOperations';
+import theme from '../../global/styles/theme';
 
 const cursos = [
   'Licenciatura em Ciências Biológicas',
@@ -60,10 +61,9 @@ export function Curso() {
 
   return (
     <StyledLinearGradient
-      colors={['#000000', '#a00000', '#ff0000']}
+      colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
       start={{ x: 0, y: 0 }}
       end={{ x: 0, y: 1 }}
-      style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}
     >
       <Title>Qual é o seu curso?</Title>
       <ButtonItem title={showCourses ? "Selecione o Curso   ▲" : "Selecione o Curso   ▼"} onPress={handleToggleCourses} />

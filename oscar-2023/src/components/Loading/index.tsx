@@ -6,7 +6,7 @@ import React from "react";
 export function Loading() {
     return (
         <StyledLinearGradient
-            colors={['#000000', '#a00000', '#ff0000']}
+            colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
             start={{ x: 0, y: 0 }}
             end={{ x: 0, y: 1 }}
         >
