@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Splash } from '../screens/Splash';
 import { Home } from '../screens/Home';
 import { Idade } from '../screens/Idade';
@@ -19,18 +19,24 @@ export type RootStackParamList = {
   Filme: undefined;
 };
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function Routes() {
   return (
-    <Stack.Navigator initialRouteName="Splash">
-      <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
-      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-      <Stack.Screen name="Idade" component={Idade} options={{ headerShown: false }} />
-      <Stack.Screen name="Pessoa" component={Pessoa} options={{ headerShown: false }} />
-      <Stack.Screen name="Curso" component={Curso} options={{ headerShown: false }} />
-      <Stack.Screen name="Setor" component={Setor} options={{ headerShown: false }} />
-      <Stack.Screen name="Quiz" component={Quiz} options={{ headerShown: false }} />
+    <Stack.Navigator 
+      initialRouteName="Splash"
+      screenOptions={{
+        headerShown: false,
+        animation: 'slide_from_bottom',
+      }}
+    >
+      <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Idade" component={Idade} />
+      <Stack.Screen name="Pessoa" component={Pessoa} />
+      <Stack.Screen name="Curso" component={Curso} />
+      <Stack.Screen name="Setor" component={Setor} />
+      <Stack.Screen name="Quiz" component={Quiz} />
     </Stack.Navigator>
   );
 }

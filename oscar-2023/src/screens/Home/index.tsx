@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { BackHandler } from 'react-native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, OscarImg, StyledLinearGradient } from './styles';
@@ -10,6 +11,17 @@ const estatueta = require('../../../assets/images/estatueta-oscar.png');
 
 export function Home() {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Home'>>();
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => true;
+
+      BackHandler.addEventListener("hardwareBackPress", onBackPress);
+
+      return () =>
+        BackHandler.removeEventListener("hardwareBackPress", onBackPress);
+    }, [])
+  );
   
   return (
     <StyledLinearGradient

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { BackHandler } from 'react-native';
+import { BackHandler, Dimensions } from 'react-native';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 import { Filme } from '../Filme';
 import theme from '../../global/styles/theme';
+import Animated, { useSharedValue, withTiming, useAnimatedStyle, Easing } from 'react-native-reanimated';
 
 const QUESTIONS = [
   {
@@ -201,6 +202,8 @@ export function Quiz() {
   const [history, setHistory] = useState<number[]>([]);
   const currentQuestion = QUESTIONS[currentQuestionIndex];
 
+  const offset = useSharedValue(Dimensions.get('window').width);
+
   const handleAnswer = (answerIndex: number) => {
     const nextQuestionIndex = currentQuestion.next[answerIndex];
     if (nextQuestionIndex !== null) {
@@ -236,6 +239,20 @@ export function Quiz() {
     return () => backHandler.remove();
   }, [history]);
 
+  useEffect(() => {
+    offset.value = Dimensions.get('window').width; // Adicione esta linha
+    offset.value = withTiming(0, {
+      duration: 1000,
+      easing: Easing.ease,
+    });
+  }, [currentQuestionIndex, selectedMovie]);
+
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [{ translateX: offset.value }],
+    };
+  });
+
   return (
     <StyledLinearGradient
       colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
@@ -243,12 +260,18 @@ export function Quiz() {
       end={{ x: 0, y: 1 }}
     >
       {selectedMovie ? (
-        <Filme filme={selectedMovie} />
+        <Animated.View style={animatedStyles}>
+          <Filme filme={selectedMovie} />
+        </Animated.View>
       ) : (
         <>
-          <Title>{currentQuestion.question}</Title>
+          <Animated.View style={animatedStyles}>
+            <Title>{currentQuestion.question}</Title>
+          </Animated.View>
           {currentQuestion.answers.map((answer, index) => (
-            <Button key={index} title={answer} onPress={() => handleAnswer(index)} />
+            <Animated.View style={animatedStyles} key={index}>
+              <Button title={answer} onPress={() => handleAnswer(index)} />
+            </Animated.View>
           ))}
         </>
       )}

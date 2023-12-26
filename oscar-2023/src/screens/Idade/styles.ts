@@ -12,17 +12,18 @@ export const StyledLinearGradient = styled(LinearGradient)`
   height: 100%;
   overflow: hidden;
   flex: 1;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 `;
 
 export const Title = styled.Text`
   margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 36px;
+  font-size: 40px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
   top: 15px;
   padding: 20px;
+  margin-bottom: 40px;
 `;
