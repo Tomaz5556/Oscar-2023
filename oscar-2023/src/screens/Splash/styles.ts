@@ -11,25 +11,20 @@ export const StyledLinearGradient = styled(LinearGradient)`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.Text`
-  margin: 0;
-  top: 400px;
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 48px;
-  text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
-  justify-content: center;
 `;
 
-export const SplashImg = styled.Image.attrs({
-  resizeMode: 'contain',
-})`
-  position: absolute;
-  bottom: 50px;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  align-self: center;
+export const SplashImg = styled.Image`
+  object-fit: fill;
+  width: 95%;
+  height: 40%;
+  border-radius: 150px;
 `;

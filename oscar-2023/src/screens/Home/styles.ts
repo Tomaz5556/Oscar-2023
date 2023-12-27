@@ -17,7 +17,6 @@ export const StyledLinearGradient = styled(LinearGradient)`
 `;
 
 export const Title = styled.Text`
-  margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 36px;
   text-align: center;
@@ -27,13 +26,8 @@ export const Title = styled.Text`
   padding: 20px;
 `;
 
-export const OscarImg = styled.Image.attrs({
-  resizeMode: 'contain',
-})`
-  position: absolute;
-  top: 200px;
-  justify-content: center;
-  width: 32%;
-  height: 32%;
-  align-self: center;
+export const OscarImg = styled.Image`
+  object-fit: contain;
+  width: 50%;
+  height: 50%;
 `;

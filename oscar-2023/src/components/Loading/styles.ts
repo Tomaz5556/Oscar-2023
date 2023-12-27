@@ -11,11 +11,11 @@ export const StyledLinearGradient = styled(LinearGradient)`
   display: block;
   width: 100%;
   height: 100%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const StyledActivityIndicator = styled(ActivityIndicator)`
-  justify-content: center;
-  align-items: center;
   display: flex;
-  flex: 1;
 `;

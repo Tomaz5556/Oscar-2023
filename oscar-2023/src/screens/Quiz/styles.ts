@@ -17,7 +17,6 @@ export const StyledLinearGradient = styled(LinearGradient)`
 `;
 
 export const Title = styled.Text`
-  margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 40px;
   text-align: center;

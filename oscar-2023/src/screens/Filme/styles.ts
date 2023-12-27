@@ -18,7 +18,6 @@ export const StyledLinearGradient = styled(LinearGradient)`
 `;
 
 export const Title = styled.Text`
-  margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 36px;
   text-align: center;
@@ -28,7 +27,6 @@ export const Title = styled.Text`
 `;
 
 export const Movie = styled.Text`
-  margin: 0;
   font-family: ${({ theme }) => theme.fonts.bold};
   font-size: 36px;
   text-align: center;
@@ -38,7 +36,6 @@ export const Movie = styled.Text`
 `;
 
 export const Description = styled.Text`
-  margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 18px;
   text-align: center;
@@ -47,7 +44,6 @@ export const Description = styled.Text`
 `;
 
 export const Director = styled.Text`
-  margin: 0;
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 18px;
   text-align: center;
@@ -56,12 +52,10 @@ export const Director = styled.Text`
   padding-top: 20px;
 `;
 
-export const Image = styled.Image.attrs({
-  resizeMode: 'contain',
-})`
-  justify-content: center;
-  width: 40%;
+export const Image = styled.Image`
+  object-fit: fill;
+  width: 70%;
   height: 40%;
-  align-self: center;
-  padding: 100px;
+  border-radius: 20px;
+  margin: 10px;
 `;
