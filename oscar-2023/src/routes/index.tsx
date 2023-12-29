@@ -1,6 +1,5 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Splash } from '../screens/Splash';
 import { Home } from '../screens/Home';
 import { Idade } from '../screens/Idade';
 import { Pessoa } from '../screens/Pessoa';
@@ -9,7 +8,6 @@ import { Setor } from '../screens/Setor';
 import { Quiz } from '../screens/Quiz';
 
 export type RootStackParamList = {
-  Splash: undefined;
   Home: undefined;
   Idade: undefined;
   Pessoa: undefined;
@@ -24,13 +22,12 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export function Routes() {
   return (
     <Stack.Navigator 
-      initialRouteName="Splash"
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
         animation: 'slide_from_bottom',
       }}
     >
-      <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Idade" component={Idade} />
       <Stack.Screen name="Pessoa" component={Pessoa} />

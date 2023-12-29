@@ -28,6 +28,6 @@ export const Title = styled.Text`
 
 export const OscarImg = styled.Image`
   object-fit: contain;
-  width: 50%;
-  height: 50%;
+  width: 45%;
+  height: 45%;
 `;
