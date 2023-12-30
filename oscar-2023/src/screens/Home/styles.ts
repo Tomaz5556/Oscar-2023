@@ -6,11 +6,8 @@ export const StyledLinearGradient = styled(LinearGradient)`
   left: 0;
   right: 0;
   top: 0;
-  box-sizing: border-box;
-  display: block;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   flex: 1;
   justify-content: space-between;
   align-items: center;

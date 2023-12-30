@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BackHandler, Dimensions } from 'react-native';
+import { BackHandler, Dimensions, ScrollView } from 'react-native';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
 import { Filme } from '../Filme';
@@ -87,20 +87,20 @@ const QUESTIONS = [
   },
 ];
 
-const bansheesImg = require('../../../assets/images/banshees.jpg'); 
-const topgunImg = require ('../../../assets/images/topgun.jpg');
-const babiloniaImg = require ('../../../assets/images/babilonia.jpg');
-const tarImg = require ('../../../assets/images/tar.jpg');
-const entremulheresImg = require ('../../../assets/images/entremulheres.jpg');
-const elvisImg = require ('../../../assets/images/elvis.jpg');
-const glassonionImg = require ('../../../assets/images/glassonion.jpg');
-const trianguloImg = require ('../../../assets/images/triangulo.jpg');
-const avatarImg = require ('../../../assets/images/avatar.jpg');
-const nadadenovoImg = require ('../../../assets/images/nadadenovo.jpg');
-const tudoemtodoImg = require ('../../../assets/images/tudoemtodo.jpg');
-const baleiaImg = require ('../../../assets/images/baleia.jpg');
-const pinoquioImg = require ('../../../assets/images/pinoquio.jpg');
-const fabelmansImg = require ('../../../assets/images/fabelmans.jpg');
+const bansheesImg = require('../../../assets/images/banshees.jpg');
+const topgunImg = require('../../../assets/images/topgun.jpg');
+const babiloniaImg = require('../../../assets/images/babilonia.jpg');
+const tarImg = require('../../../assets/images/tar.jpg');
+const entremulheresImg = require('../../../assets/images/entremulheres.jpg');
+const elvisImg = require('../../../assets/images/elvis.jpg');
+const glassonionImg = require('../../../assets/images/glassonion.jpg');
+const trianguloImg = require('../../../assets/images/triangulo.jpg');
+const avatarImg = require('../../../assets/images/avatar.jpg');
+const nadadenovoImg = require('../../../assets/images/nadadenovo.jpg');
+const tudoemtodoImg = require('../../../assets/images/tudoemtodo.jpg');
+const baleiaImg = require('../../../assets/images/baleia.jpg');
+const pinoquioImg = require('../../../assets/images/pinoquio.jpg');
+const fabelmansImg = require('../../../assets/images/fabelmans.jpg');
 
 const FILMES = [
   {
@@ -216,7 +216,7 @@ export function Quiz() {
       }
     }
   };
-  
+
   const handleBack = () => {
     if (history.length > 0) {
       const lastQuestionIndex = history[history.length - 1];
@@ -254,27 +254,29 @@ export function Quiz() {
   });
 
   return (
-    <StyledLinearGradient
-      colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 0, y: 1 }}
-    >
-      {selectedMovie ? (
-        <Animated.View style={animatedStyles}>
-          <Filme filme={selectedMovie} />
-        </Animated.View>
-      ) : (
-        <>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <StyledLinearGradient
+        colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+      >
+        {selectedMovie ? (
           <Animated.View style={animatedStyles}>
-            <Title>{currentQuestion.question}</Title>
+            <Filme filme={selectedMovie} />
           </Animated.View>
-          {currentQuestion.answers.map((answer, index) => (
-            <Animated.View style={animatedStyles} key={index}>
-              <Button title={answer} onPress={() => handleAnswer(index)} />
+        ) : (
+          <>
+            <Animated.View style={animatedStyles}>
+              <Title>{currentQuestion.question}</Title>
             </Animated.View>
-          ))}
-        </>
-      )}
-    </StyledLinearGradient>
+            {currentQuestion.answers.map((answer, index) => (
+              <Animated.View style={animatedStyles} key={index}>
+                <Button title={answer} onPress={() => handleAnswer(index)} />
+              </Animated.View>
+            ))}
+          </>
+        )}
+      </StyledLinearGradient>
+    </ScrollView>
   );
 }

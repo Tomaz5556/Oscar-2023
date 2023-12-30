@@ -1,16 +1,13 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export const StyledLinearGradient = styled(LinearGradient)`
+export const StyledView = styled.View`
   position: relative;
   left: 0;
   right: 0;
   top: 0;
-  box-sizing: border-box;
-  display: block;
   width: 100%;
-  height: 852px;
-  overflow: hidden;
+  height: 100%;
   padding: 15px;
   flex: 1;
   justify-content: flex-start;
@@ -54,8 +51,8 @@ export const Director = styled.Text`
 
 export const Image = styled.Image`
   object-fit: fill;
-  width: 70%;
-  height: 40%;
+  width: 200px;
+  height: 320px;
   border-radius: 20px;
   margin: 10px;
 `;
