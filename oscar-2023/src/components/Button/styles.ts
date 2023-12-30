@@ -5,7 +5,7 @@ export const StyledButton = styled.TouchableOpacity`
   border: 2px solid ${({ theme }) => theme.colors.primary};
   align-items: center;
   border-radius: 15px;
-  margin: 12px 12px 15px 12px;
+  margin: 12px 0px 15px 0px;
 `;
 
 export const ButtonText = styled.Text`

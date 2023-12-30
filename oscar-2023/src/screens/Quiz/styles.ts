@@ -14,6 +14,7 @@ export const StyledLinearGradient = styled(LinearGradient)`
   flex: 1;
   justify-content: flex-start;
   align-items: center;
+  padding: 12px;
 `;
 
 export const Title = styled.Text`
@@ -23,6 +24,6 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
   top: 15px;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 50px;
 `;
