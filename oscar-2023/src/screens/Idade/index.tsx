@@ -5,14 +5,14 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
-import { storeData } from '../../GuardarDados';
+import { storeData } from '../../store';
 import theme from '../../global/styles/theme';
 
 export function Idade() {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Idade'>>();
   
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <StyledLinearGradient
         colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}
         start={{ x: 0, y: 0 }}

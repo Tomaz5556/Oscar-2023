@@ -7,7 +7,7 @@ import { Title, StyledLinearGradient, StyledTextInput } from './styles';
 import { Button } from '../../components/Button';
 import { ButtonItem } from '../../components/ButtonItem';
 import { ItemList } from '../../components/ItemList';
-import { storeData } from '../../GuardarDados';
+import { storeData } from '../../store';
 import theme from '../../global/styles/theme';
 
 const cursos = [

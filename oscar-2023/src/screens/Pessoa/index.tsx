@@ -4,7 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../routes';
 import { Title, StyledLinearGradient } from './styles';
 import { Button } from '../../components/Button';
-import { storeData } from '../../GuardarDados';
+import { storeData } from '../../store';
 import theme from '../../global/styles/theme';
 
 export function Pessoa() {

@@ -14,9 +14,9 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <Loading/>;
+    return <Loading />;
   }
-  
+
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style="auto" />

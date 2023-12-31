@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { LinearGradient } from 'expo-linear-gradient';
 
 export const StyledView = styled.View`
   position: relative;
@@ -34,7 +33,7 @@ export const Movie = styled.Text`
 
 export const Description = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
@@ -42,11 +41,11 @@ export const Description = styled.Text`
 
 export const Director = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
-  padding-top: 20px;
+  padding: 15px 0px 15px 0px;
 `;
 
 export const Image = styled.Image`
@@ -54,5 +53,5 @@ export const Image = styled.Image`
   width: 200px;
   height: 320px;
   border-radius: 20px;
-  margin: 10px;
+  margin: 20px;
 `;
