@@ -22,7 +22,7 @@ export function Home() {
         BackHandler.removeEventListener("hardwareBackPress", onBackPress);
     }, [])
   );
-  
+
   return (
     <StyledLinearGradient
       colors={[theme.colors.background_dark, theme.colors.background_regular, theme.colors.background_light]}

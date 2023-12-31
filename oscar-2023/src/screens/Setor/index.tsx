@@ -34,7 +34,7 @@ const setores = [
 
 export function Setor() {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Setor'>>();
-  
+
   const [showSectors, setShowSectors] = React.useState(false);
 
   const [selectedSector, setSelectedSector] = React.useState<string | null>(null);
@@ -58,7 +58,7 @@ export function Setor() {
       await storeData('setor', sectorToStore);
       navigation.navigate('Quiz');
     }
-  };  
+  };
 
   const handleToggleSectors = () => {
     setShowSectors(!showSectors);
@@ -74,9 +74,9 @@ export function Setor() {
       <Title>Qual é o seu setor?</Title>
       <ButtonItem title={showSectors ? "Selecione o Setor   ▲" : "Selecione o Setor   ▼"} onPress={handleToggleSectors} />
       {showSectors && <ItemList data={setores} onPressItem={handlePressItem} />}
-      {showInput && showInput && selectedSector === 'Outro: Qual?' && 
-        <StyledTextInput 
-          placeholder="Digite o setor" 
+      {showInput && showInput && selectedSector === 'Outro: Qual?' &&
+        <StyledTextInput
+          placeholder="Digite o setor"
           value={otherSector}
           onChangeText={setOtherSector}
         />

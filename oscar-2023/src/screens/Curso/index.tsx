@@ -52,7 +52,7 @@ export function Curso() {
       await storeData('curso', courseToStore);
       navigation.navigate('Quiz');
     }
-  };  
+  };
 
   const handleToggleCourses = () => {
     setShowCourses(!showCourses);
