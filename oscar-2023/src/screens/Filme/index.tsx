@@ -116,7 +116,7 @@ export function Filme({ filme }: FilmeProps) {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Filme'>>();
 
   useEffect(() => {
-    storeData('filme', filme.nome);
+    storeData('Filme', filme.nome);
   }, []);
 
   const handleConfirm = () => {

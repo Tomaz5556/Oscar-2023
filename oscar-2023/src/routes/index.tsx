@@ -3,16 +3,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from '../screens/Home';
 import { Idade } from '../screens/Idade';
 import { Pessoa } from '../screens/Pessoa';
-import { Curso } from '../screens/Curso';
-import { Setor } from '../screens/Setor';
+import { CursoSetor } from '../screens/CursoSetor';
 import { Quiz } from '../screens/Quiz';
 
 export type RootStackParamList = {
   Home: undefined;
   Idade: undefined;
   Pessoa: undefined;
-  Curso: undefined;
-  Setor: undefined;
+  CursoSetor: { type: 'Curso' | 'Setor' };
   Quiz: undefined;
   Filme: undefined;
 };
@@ -31,8 +29,7 @@ export function Routes() {
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Idade" component={Idade} />
       <Stack.Screen name="Pessoa" component={Pessoa} />
-      <Stack.Screen name="Curso" component={Curso} />
-      <Stack.Screen name="Setor" component={Setor} />
+      <Stack.Screen name="CursoSetor" component={CursoSetor} />
       <Stack.Screen name="Quiz" component={Quiz} />
     </Stack.Navigator>
   );

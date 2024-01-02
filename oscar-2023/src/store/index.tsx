@@ -10,7 +10,7 @@ export const storeData = async (key: string, value: any) => {
       lastKey = Object.keys(usersData[usersData.length - 1]).pop() || '';
     }
 
-    if ((lastKey === 'curso' || lastKey === 'setor') && (key === 'curso' || key === 'setor')) {
+    if ((lastKey === 'Curso' || lastKey === 'Setor') && (key === 'Curso' || key === 'Setor')) {
       let lastUser = usersData[usersData.length - 1];
       delete lastUser[lastKey];
       lastUser[key] = value;

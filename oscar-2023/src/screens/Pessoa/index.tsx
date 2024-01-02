@@ -17,8 +17,8 @@ export function Pessoa() {
       end={{ x: 0, y: 1 }}
     >
       <Title>Quem você é?</Title>
-      <Button title="Aluno" onPress={() => { navigation.navigate('Curso'); storeData('pessoa', 'Aluno'); }} />
-      <Button title="Servidor" onPress={() => { navigation.navigate('Setor'); storeData('pessoa', 'Servidor'); }} />
+      <Button title="Aluno" onPress={() => { navigation.navigate('CursoSetor', { type: 'Curso' }); storeData('Pessoa', 'Aluno'); }} />
+      <Button title="Servidor" onPress={() => { navigation.navigate('CursoSetor', { type: 'Setor' }); storeData('Pessoa', 'Servidor'); }} />
     </StyledLinearGradient>
   );
 }
