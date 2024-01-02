@@ -5,19 +5,30 @@ export const storeData = async (key: string, value: any) => {
     const jsonValue = await AsyncStorage.getItem('users');
     let usersData = jsonValue != null ? JSON.parse(jsonValue) : [];
 
-    let userData: { [key: string]: any } = {};
-    userData[key] = value;
+    let lastKey = '';
+    if (usersData.length > 0) {
+      lastKey = Object.keys(usersData[usersData.length - 1]).pop() || '';
+    }
 
-    if (usersData.length === 0 || Object.keys(usersData[usersData.length - 1]).length === 4) {
-      let newUser: { [key: string]: any } = {};
-      newUser[key] = value;
-      usersData.push(newUser);
-    } else {
+    if ((lastKey === 'curso' || lastKey === 'setor') && (key === 'curso' || key === 'setor')) {
       let lastUser = usersData[usersData.length - 1];
-      if (!lastUser.hasOwnProperty(key)) {
-        lastUser[key] = value;
+      delete lastUser[lastKey];
+      lastUser[key] = value;
+    } else {
+      let userData: { [key: string]: any } = {};
+      userData[key] = value;
+
+      if (usersData.length === 0 || Object.keys(usersData[usersData.length - 1]).length === 4) {
+        let newUser: { [key: string]: any } = {};
+        newUser[key] = value;
+        usersData.push(newUser);
       } else {
-        lastUser[key] = value;
+        let lastUser = usersData[usersData.length - 1];
+        if (!lastUser.hasOwnProperty(key)) {
+          lastUser[key] = value;
+        } else {
+          lastUser[key] = value;
+        }
       }
     }
 
