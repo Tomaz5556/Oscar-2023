@@ -19,12 +19,11 @@ export function Idade() {
         end={{ x: 0, y: 1 }}
       >
         <Title>Qual é a sua idade?</Title>
-        <Button title="De 0 a 11 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 0 a 11 anos'); }} />
-        <Button title="De 12 a 20 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 12 a 20 anos'); }} />
-        <Button title="De 21 a 30 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 21 a 30 anos'); }} />
-        <Button title="De 31 a 50 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 31 a 50 anos'); }} />
+        <Button title="De 0 a 17 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 0 a 17 anos'); }} />
+        <Button title="De 18 a 34 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 18 a 34 anos'); }} />
+        <Button title="De 35 a 49 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 35 a 49 anos'); }} />
         <Button title="De 50 a 65 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 50 a 65 anos'); }} />
-        <Button title="Acima de 66 anos" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'Acima de 66 anos'); }} />
+        <Button title="De 66 anos acima" onPress={() => { navigation.navigate('Pessoa'); storeData('Idade', 'De 66 anos acima'); }} />
       </StyledLinearGradient>
     </ScrollView>
   );
