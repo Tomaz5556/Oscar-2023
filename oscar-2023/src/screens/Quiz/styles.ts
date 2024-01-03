@@ -21,6 +21,6 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
   top: 15px;
-  padding: 10px;
+  padding: 50px 10px 10px 10px;
   margin-bottom: 50px;
 `;

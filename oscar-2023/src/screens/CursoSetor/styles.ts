@@ -20,7 +20,7 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
   top: 15px;
-  padding: 20px;
+  padding: 50px 20px 20px 20px;
   margin-bottom: 40px;
 `;
 

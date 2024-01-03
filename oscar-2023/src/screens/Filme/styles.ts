@@ -20,6 +20,7 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
   top: 15px;
+  padding-top: 50px;
 `;
 
 export const Movie = styled.Text`

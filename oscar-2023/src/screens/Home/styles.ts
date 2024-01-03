@@ -20,11 +20,11 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
   justify-content: center;
   top: 15px;
-  padding: 20px;
+  padding: 50px 20px 20px 20px;
 `;
 
 export const OscarImg = styled.Image`
   object-fit: contain;
-  width: 45%;
-  height: 45%;
+  width: 40%;
+  height: 40%;
 `;
